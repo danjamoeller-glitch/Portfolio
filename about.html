@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>About — Danja Moeller</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================================
+           ABOUT PAGE
+        ========================================================= */
+
+        body.about-page {
+            background: var(--cream);
+            color: var(--black);
+        }
+
+        .about-page .site-header {
+            color: var(--black);
+            mix-blend-mode: normal;
+        }
+
+        .about-page .menu-toggle {
+            border-color: rgba(17, 17, 17, .35);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .about-hero {
+            min-height: 100vh;
+
+            padding:
+                150px
+                50px
+                110px;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, .9fr)
+                minmax(420px, .85fr);
+
+            gap: clamp(80px, 10vw, 170px);
+
+            align-items: center;
+        }
+
+        .about-hero-copy {
+            align-self: center;
+        }
+
+        .about-title {
+            margin-left: -.055em;
+
+            font-size: clamp(
+                110px,
+                13vw,
+                210px
+            );
+
+            font-weight: 400;
+
+            line-height: .76;
+            letter-spacing: -.07em;
+        }
+
+        .about-role {
+            margin-top: 48px;
+
+            font-size: clamp(
+                15px,
+                1.3vw,
+                20px
+            );
+
+            line-height: 1.12;
+            text-transform: uppercase;
+        }
+
+        .about-intro {
+            max-width: 480px;
+
+            margin-top: 60px;
+
+            font-size: clamp(
+                16px,
+                1.35vw,
+                21px
+            );
+
+            line-height: 1.38;
+        }
+
+        .about-intro p + p {
+            margin-top: 28px;
+        }
+
+
+        /* HERO IMAGE */
+
+        .about-portrait {
+            width: 100%;
+            max-width: 640px;
+
+            justify-self: end;
+
+            aspect-ratio: 4 / 5;
+
+            overflow: hidden;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #aaa59d,
+                    #55514c
+                );
+        }
+
+        .about-portrait img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #aaa59d 0%,
+                    #77716a 50%,
+                    #252525 100%
+                );
+
+            color:
+                rgba(242, 238, 230, .72);
+
+            font-size: 10px;
+
+            letter-spacing: .08em;
+        }
+
+
+        /* =========================================================
+           DESIGN IS HOW I THINK
+        ========================================================= */
+
+        .design-thinking {
+            min-height: 540px;
+
+            padding:
+                115px
+                50px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, .72),
+                    rgba(0, 0, 0, .2)
+                ),
+                linear-gradient(
+                    125deg,
+                    #28251f,
+                    #827768
+                );
+
+            color: var(--cream);
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.6fr)
+                minmax(260px, .55fr);
+
+            gap: 70px;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .design-thinking::after {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            left: 17%;
+            bottom: -310px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0, 0, 0, .2);
+
+            filter: blur(25px);
+
+            pointer-events: none;
+        }
+
+        .design-thinking h2 {
+            position: relative;
+            z-index: 2;
+
+            white-space: nowrap;
+
+            font-size: clamp(
+                48px,
+                6vw,
+                96px
+            );
+
+            font-weight: 400;
+
+            line-height: .9;
+            letter-spacing: -.055em;
+        }
+
+        .design-thinking-copy {
+            position: relative;
+            z-index: 2;
+
+            max-width: 340px;
+
+            font-size: clamp(
+                14px,
+                1.15vw,
+                18px
+            );
+
+            line-height: 1.4;
+        }
+
+
+        /* =========================================================
+           TOOLS
+        ========================================================= */
+
+        .tools-section {
+            position: relative;
+
+            padding:
+                145px
+                0
+                155px;
+
+            overflow: hidden;
+
+            background: var(--cream);
+        }
+
+
+        /* TOOLS INTRO */
+
+        .tools-intro {
+            position: relative;
+            z-index: 20;
+
+            padding:
+                0
+                50px;
+
+            margin-bottom: 115px;
+        }
+
+        .tools-kicker {
+            margin: 0 0 25px;
+
+            color: var(--black);
+
+            font-size: 11px;
+            line-height: 1;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+        }
+
+        .tools-heading {
+            max-width: 1100px;
+
+            margin: 0;
+
+            color: var(--black);
+
+            font-size: clamp(
+                58px,
+                7vw,
+                112px
+            );
+
+            font-weight: 400;
+
+            line-height: .82;
+            letter-spacing: -.06em;
+        }
+
+        .tools-heading span {
+            display: block;
+        }
+
+
+        /* =========================================================
+           TOOL MARQUEES
+           Fade ONLY on moving rows
+        ========================================================= */
+
+        .tools-marquee {
+            width: 100%;
+
+            overflow: hidden;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .tools-marquee::before,
+        .tools-marquee::after {
+            content: "";
+
+            position: absolute;
+
+            z-index: 10;
+
+            top: 0;
+            bottom: 0;
+
+            width: 12vw;
+
+            pointer-events: none;
+        }
+
+        .tools-marquee::before {
+            left: 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    var(--cream) 5%,
+                    rgba(242, 238, 230, .94) 35%,
+                    rgba(242, 238, 230, 0) 100%
+                );
+        }
+
+        .tools-marquee::after {
+            right: 0;
+
+            background:
+                linear-gradient(
+                    to left,
+                    var(--cream) 5%,
+                    rgba(242, 238, 230, .94) 35%,
+                    rgba(242, 238, 230, 0) 100%
+                );
+        }
+
+        .tools-marquee + .tools-marquee {
+            margin-top: 85px;
+        }
+
+        .tools-track {
+            width: max-content;
+
+            display: flex;
+            align-items: center;
+
+            gap: 88px;
+
+            will-change: transform;
+        }
+
+        .tools-track-left {
+            animation:
+                toolsMoveLeft
+                30s
+                linear
+                infinite;
+        }
+
+        .tools-track-right {
+            animation:
+                toolsMoveRight
+                32s
+                linear
+                infinite;
+        }
+
+
+        /* TOOL */
+
+        .tool-item {
+            flex: 0 0 auto;
+
+            display: flex;
+            align-items: center;
+
+            gap: 19px;
+
+            white-space: nowrap;
+        }
+
+        .tool-icon {
+            width: 64px;
+            height: 64px;
+
+            flex: 0 0 64px;
+
+            border-radius: 9px;
+
+            background: var(--black);
+            color: var(--cream);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            font-size: 25px;
+            font-weight: 500;
+
+            line-height: 1;
+            letter-spacing: -.04em;
+        }
+
+        .tool-name {
+            font-size: 16px;
+
+            line-height: 1;
+        }
+
+
+        /* =========================================================
+           FIGMA ICON
+        ========================================================= */
+
+        .tool-icon.figma {
+            padding: 12px;
+
+            background: var(--black);
+        }
+
+        .figma-mark {
+            width: 27px;
+            height: 39px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            grid-template-rows:
+                1fr
+                1fr
+                1fr;
+        }
+
+        .figma-mark span {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            background: var(--cream);
+        }
+
+        .figma-mark span:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+
+            border-radius:
+                7px
+                0
+                0
+                7px;
+        }
+
+        .figma-mark span:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+
+            border-radius:
+                0
+                7px
+                7px
+                0;
+        }
+
+        .figma-mark span:nth-child(3) {
+            grid-column: 1;
+            grid-row: 2;
+
+            border-radius:
+                7px
+                0
+                0
+                7px;
+        }
+
+        .figma-mark span:nth-child(4) {
+            grid-column: 2;
+            grid-row: 2;
+
+            border-radius: 50%;
+        }
+
+        .figma-mark span:nth-child(5) {
+            grid-column: 1;
+            grid-row: 3;
+
+            border-radius:
+                7px
+                0
+                7px
+                7px;
+        }
+
+
+        /* =========================================================
+           WORDPRESS
+        ========================================================= */
+
+        .tool-icon.wordpress {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 29px;
+            font-weight: 400;
+        }
+
+        .wordpress-mark {
+            width: 34px;
+            height: 34px;
+
+            border:
+                1.8px
+                solid
+                var(--cream);
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 23px;
+
+            line-height: 1;
+        }
+
+
+        /* =========================================================
+           CANVA
+        ========================================================= */
+
+        .tool-icon.canva {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 18px;
+            font-style: italic;
+
+            letter-spacing: -.07em;
+        }
+
+
+        /* =========================================================
+           TOOL ANIMATIONS
+        ========================================================= */
+
+        @keyframes toolsMoveLeft {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+
+        }
+
+        @keyframes toolsMoveRight {
+
+            from {
+                transform: translateX(-50%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+
+        }
+
+
+        /* =========================================================
+           APPROACH
+        ========================================================= */
+
+        .approach-section {
+            min-height: 540px;
+
+            padding:
+                130px
+                50px;
+
+            background:
+                radial-gradient(
+                    circle at 10% 75%,
+                    rgba(255, 255, 255, .07),
+                    transparent 28%
+                ),
+                var(--black);
+
+            color: var(--cream);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .approach-section::before {
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            left: -190px;
+            bottom: -210px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(242, 238, 230, .06);
+
+            filter: blur(10px);
+        }
+
+        .approach-inner {
+            position: relative;
+            z-index: 2;
+
+            width: min(
+                760px,
+                100%
+            );
+        }
+
+        .approach-label {
+            font-size: 13px;
+
+            letter-spacing: .55em;
+
+            text-transform: uppercase;
+        }
+
+        .approach-line {
+            width: 40px;
+            height: 1px;
+
+            margin:
+                27px
+                auto
+                34px;
+
+            background:
+                rgba(242, 238, 230, .55);
+        }
+
+        .approach-copy {
+            font-size: clamp(
+                17px,
+                1.55vw,
+                23px
+            );
+
+            line-height: 1.45;
+        }
+
+
+        /* =========================================================
+           PHOTOGRAPHY
+        ========================================================= */
+
+        .photography-section {
+            min-height: 660px;
+
+            padding:
+                125px
+                50px
+                135px;
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(300px, .72fr)
+                minmax(0, 1.28fr);
+
+            gap: 65px;
+
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        .photography-copy-area {
+            position: relative;
+
+            z-index: 4;
+        }
+
+        .photography-title {
+            position: relative;
+
+            z-index: 6;
+
+            width: max-content;
+
+            margin-right: -230px;
+
+            font-size: clamp(
+                64px,
+                7vw,
+                112px
+            );
+
+            font-weight: 400;
+
+            line-height: .82;
+
+            letter-spacing: -.06em;
+
+            pointer-events: none;
+        }
+
+        .photography-copy {
+            max-width: 380px;
+
+            margin-top: 50px;
+
+            font-size: clamp(
+                15px,
+                1.2vw,
+                18px
+            );
+
+            line-height: 1.42;
+        }
+
+
+        /* IMAGES */
+
+        .photo-grid {
+            position: relative;
+
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr
+                1fr;
+
+            gap: 18px;
+
+            align-items: center;
+        }
+
+        .photo-card {
+            height: 350px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: #8b867f;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition:
+                transform
+                .65s
+                cubic-bezier(.22,.61,.36,1);
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.035);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color:
+                rgba(242, 238, 230, .65);
+
+            font-size: 9px;
+
+            letter-spacing: .08em;
+        }
+
+        .photo-card:nth-child(1) {
+            background:
+                linear-gradient(
+                    #d7b59d,
+                    #7c7068 48%,
+                    #292929
+                );
+        }
+
+        .photo-card:nth-child(2) {
+            background:
+                linear-gradient(
+                    135deg,
+                    #b0a596,
+                    #39352f
+                );
+        }
+
+        .photo-card:nth-child(3) {
+            background:
+                linear-gradient(
+                    135deg,
+                    #77716c,
+                    #161616
+                );
+        }
+
+
+        /* =========================================================
+           LET'S TALK
+        ========================================================= */
+
+        .about-contact {
+            min-height: 470px;
+
+            padding:
+                100px
+                50px;
+
+            background:
+                var(--orange);
+
+            color:
+                var(--black);
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                minmax(300px, .8fr);
+
+            gap: 100px;
+
+            align-items: center;
+        }
+
+        .about-contact-title {
+            font-size: clamp(
+                95px,
+                11vw,
+                180px
+            );
+
+            font-weight: 400;
+
+            line-height: .73;
+            letter-spacing: -.065em;
+        }
+
+        .about-contact-title span {
+            display: block;
+        }
+
+        .about-contact-title a {
+            display: inline-block;
+
+            margin-left: .1em;
+
+            font-size: .7em;
+
+            transition:
+                transform
+                .3s
+                ease;
+        }
+
+        .about-contact-title a:hover {
+            transform:
+                translate(
+                    10px,
+                    -10px
+                );
+        }
+
+        .about-contact-copy {
+            max-width: 350px;
+
+            font-size: clamp(
+                15px,
+                1.2vw,
+                18px
+            );
+
+            line-height: 1.4;
+        }
+
+        .about-contact-link {
+            display: inline-block;
+
+            margin-top: 36px;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+        }
+
+        .about-contact-link span {
+            margin-left: 12px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .about-footer {
+            min-height: 360px;
+
+            padding:
+                80px
+                50px
+                55px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr
+                1fr;
+
+            gap: 50px;
+
+            align-items: end;
+        }
+
+        .about-footer-name {
+            font-size: clamp(
+                50px,
+                5vw,
+                82px
+            );
+
+            line-height: .78;
+
+            letter-spacing: -.055em;
+        }
+
+        .about-footer-name span {
+            display: block;
+        }
+
+        .about-footer-name span + span {
+            margin-top: 7px;
+        }
+
+        .about-footer-nav {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 42px;
+
+            font-size: 10px;
+        }
+
+        .about-footer-meta {
+            justify-self: end;
+
+            text-align: right;
+
+            font-size: 9px;
+
+            line-height: 1.35;
+        }
+
+        .about-footer-meta p + p {
+            margin-top: 30px;
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .about-hero {
+                padding:
+                    140px
+                    30px
+                    90px;
+
+                grid-template-columns:
+                    1fr
+                    1fr;
+
+                gap: 45px;
+            }
+
+            .about-title {
+                font-size: 12vw;
+            }
+
+            .design-thinking {
+                padding:
+                    100px
+                    30px;
+
+                grid-template-columns:
+                    1fr
+                    .5fr;
+
+                gap: 40px;
+            }
+
+            .design-thinking h2 {
+                font-size: 5.5vw;
+            }
+
+            .tools-section {
+                padding:
+                    120px
+                    0
+                    130px;
+            }
+
+            .tools-intro {
+                padding:
+                    0
+                    30px;
+
+                margin-bottom: 95px;
+            }
+
+            .tools-heading {
+                font-size: 8vw;
+            }
+
+            .tools-track {
+                gap: 58px;
+            }
+
+            .photography-section {
+                padding:
+                    110px
+                    30px
+                    120px;
+
+                grid-template-columns:
+                    minmax(250px, .7fr)
+                    1.3fr;
+
+                gap: 35px;
+            }
+
+            .photography-title {
+                font-size: 7vw;
+
+                margin-right: -160px;
+            }
+
+            .photo-card {
+                height: 280px;
+            }
+
+            .about-contact {
+                padding:
+                    90px
+                    30px;
+
+                gap: 60px;
+            }
+
+            .about-footer {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .about-hero {
+                min-height: auto;
+
+                padding:
+                    130px
+                    20px
+                    85px;
+
+                display: flex;
+
+                flex-direction: column;
+
+                gap: 65px;
+            }
+
+            .about-hero-copy {
+                width: 100%;
+            }
+
+            .about-title {
+                font-size: 22vw;
+            }
+
+            .about-role {
+                margin-top: 35px;
+            }
+
+            .about-intro {
+                margin-top: 45px;
+            }
+
+            .about-portrait {
+                width: 90%;
+
+                max-width: none;
+
+                align-self: flex-end;
+            }
+
+            .design-thinking {
+                min-height: 520px;
+
+                padding:
+                    90px
+                    20px;
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+                align-content: center;
+            }
+
+            .design-thinking h2 {
+                white-space: normal;
+
+                font-size: 14vw;
+
+                line-height: .86;
+            }
+
+            .design-thinking-copy {
+                max-width: 300px;
+            }
+
+            .tools-section {
+                padding:
+                    100px
+                    0
+                    110px;
+            }
+
+            .tools-intro {
+                padding:
+                    0
+                    20px;
+
+                margin-bottom: 80px;
+            }
+
+            .tools-kicker {
+                margin-bottom: 20px;
+
+                font-size: 10px;
+            }
+
+            .tools-heading {
+                font-size: 15vw;
+
+                line-height: .84;
+            }
+
+            .tools-marquee + .tools-marquee {
+                margin-top: 60px;
+            }
+
+            .tools-marquee::before,
+            .tools-marquee::after {
+                width: 18vw;
+            }
+
+            .tools-track {
+                gap: 48px;
+            }
+
+            .tool-icon {
+                width: 54px;
+                height: 54px;
+
+                flex-basis: 54px;
+
+                font-size: 21px;
+            }
+
+            .tool-name {
+                font-size: 13px;
+            }
+
+            .figma-mark {
+                width: 23px;
+                height: 34px;
+            }
+
+            .approach-section {
+                min-height: 500px;
+
+                padding:
+                    100px
+                    25px;
+            }
+
+            .approach-copy {
+                font-size: 17px;
+            }
+
+            .photography-section {
+                min-height: auto;
+
+                padding:
+                    100px
+                    20px
+                    110px;
+
+                display: block;
+            }
+
+            .photography-copy-area {
+                position: relative;
+
+                z-index: 5;
+            }
+
+            .photography-title {
+                position: relative;
+
+                z-index: 7;
+
+                margin-right: 0;
+                margin-bottom: -7vw;
+
+                font-size: 15vw;
+
+                white-space: nowrap;
+            }
+
+            .photography-copy {
+                margin-top: 65px;
+            }
+
+            .photo-grid {
+                margin-top: 55px;
+
+                grid-template-columns:
+                    1fr
+                    1fr
+                    1fr;
+
+                gap: 8px;
+            }
+
+            .photo-card {
+                height: 43vw;
+            }
+
+            .about-contact {
+                min-height: 600px;
+
+                padding:
+                    90px
+                    20px;
+
+                grid-template-columns: 1fr;
+
+                gap: 70px;
+            }
+
+            .about-contact-title {
+                font-size: 24vw;
+            }
+
+            .about-footer {
+                min-height: 500px;
+
+                padding:
+                    80px
+                    20px
+                    40px;
+
+                grid-template-columns: 1fr;
+
+                align-items: start;
+
+                gap: 65px;
+            }
+
+            .about-footer-nav {
+                justify-content: flex-start;
+            }
+
+            .about-footer-meta {
+                justify-self: start;
+
+                text-align: left;
+            }
+
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .tools-track {
+                animation-play-state: paused;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="about-page">
+
+
+    <!-- CUSTOM CURSOR -->
+
+    <div
+        class="custom-cursor"
+        aria-hidden="true"
+    >
+        <span class="cursor-label">
+            VIEW
+        </span>
+    </div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <a
+            href="index.html"
+            class="site-logo"
+        >
+            DANJA<br>
+            MOELLER
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+
+
+    <!-- =========================================================
+         MENU
+    ========================================================== -->
+
+    <div class="menu-overlay">
+
+        <div class="menu-overlay-top">
+
+            <span>
+                DANJA<br>
+                MOELLER
+            </span>
+
+            <button
+                class="menu-close"
+                type="button"
+                aria-label="Menü schließen"
+            >
+                CLOSE
+            </button>
+
+        </div>
+
+
+        <nav class="menu-links">
+
+            <a href="index.html">
+                <span>01</span>
+                <strong>HOME</strong>
+            </a>
+
+            <a href="work.html">
+                <span>02</span>
+                <strong>WORK</strong>
+            </a>
+
+            <a href="about.html">
+                <span>03</span>
+                <strong>ABOUT</strong>
+            </a>
+
+            <a href="contact.html">
+                <span>04</span>
+                <strong>CONTACT</strong>
+            </a>
+
+        </nav>
+
+
+        <div class="menu-footer">
+
+            <span>
+                CREATIVE DESIGNER
+            </span>
+
+            <span>
+                © 2026
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="about-hero">
+
+            <div class="about-hero-copy">
+
+                <h1 class="about-title">
+                    ABOUT.
+                </h1>
+
+                <p class="about-role">
+                    CREATIVE DESIGNER<br>
+                    BASED IN GERMANY
+                </p>
+
+                <div class="about-intro">
+
+                    <p>
+                        Ich bin Danja, Creative Designerin
+                        mit einem Fokus auf visuelle
+                        Kommunikation, Branding und
+                        Social Media.
+                    </p>
+
+                    <p>
+                        Mich interessieren Ideen, die nicht
+                        nur gut aussehen, sondern eine
+                        Geschichte erzählen und Menschen
+                        erreichen.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="about-portrait"
+                data-cursor="HELLO"
+            >
+
+                <!--
+                <img
+                    src="images/about/danja.jpg"
+                    alt="Portrait von Danja Moeller"
+                >
+                -->
+
+                <div class="about-image-placeholder">
+                    PORTRAIT
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DESIGN
+        ====================================================== -->
+
+        <section class="design-thinking">
+
+            <h2>
+                DESIGN IS HOW I THINK.
+            </h2>
+
+            <p class="design-thinking-copy">
+                Ich arbeite gerne an der Schnittstelle
+                von Ästhetik und Strategie. Klare
+                Konzepte, starke visuelle Details und
+                ein Gespür für Marken, Menschen und
+                Trends prägen meine Arbeit.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             TOOLS
+        ====================================================== -->
+
+        <section
+            class="tools-section"
+            aria-label="Programme und Tools"
+        >
+
+            <div class="tools-intro">
+
+                <p class="tools-kicker">
+                    TOOLS / SOFTWARE
+                </p>
+
+                <h2 class="tools-heading">
+                    <span>THE TOOLS</span>
+                    <span>BEHIND THE WORK.</span>
+                </h2>
+
+            </div>
+
+
+            <!-- REIHE 1 -->
+
+            <div class="tools-marquee">
+
+                <div class="tools-track tools-track-left">
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Ps</span>
+                        <span class="tool-name">Photoshop</span>
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Ai</span>
+                        <span class="tool-name">Illustrator</span>
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Id</span>
+                        <span class="tool-name">InDesign</span>
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Pr</span>
+                        <span class="tool-name">Premiere Pro</span>
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Ae</span>
+                        <span class="tool-name">After Effects</span>
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Lr</span>
+                        <span class="tool-name">Lightroom</span>
+                    </div>
+
+                    <div class="tool-item">
+
+                        <span class="tool-icon figma">
+                            <span class="figma-mark">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+
+                        <span class="tool-name">
+                            Figma
+                        </span>
+
+                    </div>
+
+                    <div class="tool-item">
+
+                        <span class="tool-icon wordpress">
+                            <span class="wordpress-mark">
+                                W
+                            </span>
+                        </span>
+
+                        <span class="tool-name">
+                            WordPress
+                        </span>
+
+                    </div>
+
+                    <div class="tool-item">
+
+                        <span class="tool-icon canva">
+                            Canva
+                        </span>
+
+                        <span class="tool-name">
+                            Canva
+                        </span>
+
+                    </div>
+
+
+                    <!-- DUPLIKAT -->
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Ps</span>
+                        <span class="tool-name">Photoshop</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Ai</span>
+                        <span class="tool-name">Illustrator</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Id</span>
+                        <span class="tool-name">InDesign</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Pr</span>
+                        <span class="tool-name">Premiere Pro</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Ae</span>
+                        <span class="tool-name">After Effects</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Lr</span>
+                        <span class="tool-name">Lightroom</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+
+                        <span class="tool-icon figma">
+                            <span class="figma-mark">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+
+                        <span class="tool-name">
+                            Figma
+                        </span>
+
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+
+                        <span class="tool-icon wordpress">
+                            <span class="wordpress-mark">
+                                W
+                            </span>
+                        </span>
+
+                        <span class="tool-name">
+                            WordPress
+                        </span>
+
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+
+                        <span class="tool-icon canva">
+                            Canva
+                        </span>
+
+                        <span class="tool-name">
+                            Canva
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REIHE 2 -->
+
+            <div class="tools-marquee">
+
+                <div class="tools-track tools-track-right">
+
+                    <div class="tool-item">
+                        <span class="tool-icon canva">Canva</span>
+                        <span class="tool-name">Canva</span>
+                    </div>
+
+                    <div class="tool-item">
+
+                        <span class="tool-icon wordpress">
+                            <span class="wordpress-mark">W</span>
+                        </span>
+
+                        <span class="tool-name">
+                            WordPress
+                        </span>
+
+                    </div>
+
+                    <div class="tool-item">
+
+                        <span class="tool-icon figma">
+                            <span class="figma-mark">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+
+                        <span class="tool-name">
+                            Figma
+                        </span>
+
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Lr</span>
+                        <span class="tool-name">Lightroom</span>
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Ae</span>
+                        <span class="tool-name">After Effects</span>
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Pr</span>
+                        <span class="tool-name">Premiere Pro</span>
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Id</span>
+                        <span class="tool-name">InDesign</span>
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Ai</span>
+                        <span class="tool-name">Illustrator</span>
+                    </div>
+
+                    <div class="tool-item">
+                        <span class="tool-icon">Ps</span>
+                        <span class="tool-name">Photoshop</span>
+                    </div>
+
+
+                    <!-- DUPLIKAT -->
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon canva">Canva</span>
+                        <span class="tool-name">Canva</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+
+                        <span class="tool-icon wordpress">
+                            <span class="wordpress-mark">W</span>
+                        </span>
+
+                        <span class="tool-name">
+                            WordPress
+                        </span>
+
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+
+                        <span class="tool-icon figma">
+                            <span class="figma-mark">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+
+                        <span class="tool-name">
+                            Figma
+                        </span>
+
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Lr</span>
+                        <span class="tool-name">Lightroom</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Ae</span>
+                        <span class="tool-name">After Effects</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Pr</span>
+                        <span class="tool-name">Premiere Pro</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Id</span>
+                        <span class="tool-name">InDesign</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Ai</span>
+                        <span class="tool-name">Illustrator</span>
+                    </div>
+
+                    <div class="tool-item" aria-hidden="true">
+                        <span class="tool-icon">Ps</span>
+                        <span class="tool-name">Photoshop</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             APPROACH
+        ====================================================== -->
+
+        <section class="approach-section">
+
+            <div class="approach-inner">
+
+                <p class="approach-label">
+                    APPROACH
+                </p>
+
+                <div class="approach-line"></div>
+
+                <p class="approach-copy">
+                    Ich kombiniere kreatives Denken
+                    mit strategischem Verständnis und
+                    entwickle visuelle Inhalte, die zu
+                    einer Marke passen und auf Social
+                    Media funktionieren. Dabei verbinde
+                    ich Ästhetik, Emotion und klare
+                    Gestaltung, um Ideen visuell zum
+                    Leben zu bringen.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PHOTOGRAPHY
+        ====================================================== -->
+
+        <section class="photography-section">
+
+            <div class="photography-copy-area">
+
+                <h2 class="photography-title">
+                    PHOTOGRAPHY.
+                </h2>
+
+                <p class="photography-copy">
+                    Fotografie ist für mich ein
+                    kreativer Ausgleich. Sie hilft mir,
+                    neue Perspektiven zu entdecken und
+                    meinen Blick für Details zu
+                    schärfen.
+                </p>
+
+            </div>
+
+
+            <div class="photo-grid">
+
+                <div
+                    class="photo-card"
+                    data-cursor="VIEW"
+                >
+                    <div class="photo-placeholder">
+                        PHOTO 01
+                    </div>
+                </div>
+
+                <div
+                    class="photo-card"
+                    data-cursor="VIEW"
+                >
+                    <div class="photo-placeholder">
+                        PHOTO 02
+                    </div>
+                </div>
+
+                <div
+                    class="photo-card"
+                    data-cursor="VIEW"
+                >
+                    <div class="photo-placeholder">
+                        PHOTO 03
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section class="about-contact">
+
+            <h2 class="about-contact-title">
+
+                <span>
+                    LET'S
+                </span>
+
+                <span>
+                    TALK.
+
+                    <a
+                        href="contact.html"
+                        aria-label="Zur Kontaktseite"
+                    >
+                        ↗
+                    </a>
+
+                </span>
+
+            </h2>
+
+
+            <div>
+
+                <p class="about-contact-copy">
+                    Du hast ein Projekt, eine Idee
+                    oder einfach Lust auf einen
+                    kreativen Austausch?<br>
+                    Ich freue mich, von dir zu hören.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="about-contact-link"
+                >
+                    GET IN TOUCH
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer class="about-footer">
+
+            <div class="about-footer-name">
+
+                <span>
+                    DANJA
+                </span>
+
+                <span>
+                    MOELLER
+                </span>
+
+            </div>
+
+
+            <nav class="about-footer-nav">
+
+                <a href="work.html">
+                    WORK
+                </a>
+
+                <a href="about.html">
+                    ABOUT
+                </a>
+
+                <a href="contact.html">
+                    CONTACT
+                </a>
+
+            </nav>
+
+
+            <div class="about-footer-meta">
+
+                <p>
+                    CREATIVE DESIGNER<br>
+                    & DIGITAL ARTIST
+                </p>
+
+                <p>
+                    © 2026 DANJA MOELLER
+                </p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

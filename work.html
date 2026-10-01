@@ -3,56 +3,788 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Work | Danja Möller</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Work — Danja Moeller</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================================
+           WORK PAGE ONLY
+           Landingpage bleibt unangetastet
+        ========================================================= */
+
+        body.work-page {
+            background: var(--cream);
+            color: var(--black);
+        }
+
+        .work-page .site-header {
+            color: var(--black);
+            mix-blend-mode: normal;
+        }
+
+        .work-page .menu-toggle {
+            border-color: rgba(17, 17, 17, .35);
+        }
+
+        .work-main {
+            width: 100%;
+        }
+
+        .work-category {
+            padding: 42px 50px 110px;
+            border-bottom: 1px solid rgba(17, 17, 17, .14);
+        }
+
+        .work-label {
+            font-size: 10px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .category-intro {
+            margin-top: 48px;
+            margin-bottom: 54px;
+
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 210px;
+            gap: 50px;
+            align-items: end;
+        }
+
+        .category-title {
+            font-size: clamp(80px, 10vw, 160px);
+            font-weight: 400;
+            line-height: .78;
+            letter-spacing: -.065em;
+        }
+
+        .category-description {
+            max-width: 190px;
+
+            font-size: 11px;
+            line-height: 1.35;
+        }
+
+        .project-meta {
+            margin-top: 12px;
+
+            font-size: 10px;
+            line-height: 1.35;
+        }
+
+        .project-meta strong {
+            display: block;
+            font-weight: 400;
+        }
+
+        .project-meta span {
+            display: block;
+            color: var(--grey-dark);
+        }
+
+        .project-space {
+            margin-top: 70px;
+        }
+
+        .portfolio-image {
+            position: relative;
+
+            width: 100%;
+            overflow: hidden;
+
+            background: #c8c5bf;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: rgba(17, 17, 17, .48);
+
+            font-size: 10px;
+            text-align: center;
+
+            transition:
+                transform .4s cubic-bezier(.22,.61,.36,1),
+                filter .4s ease;
+        }
+
+        .portfolio-image:hover {
+            transform: scale(.995);
+            filter: brightness(.96);
+        }
+
+        .portfolio-image.dark {
+            background: #171717;
+            color: var(--cream);
+        }
+
+        .portfolio-image.mid {
+            background: #77736e;
+            color: var(--cream);
+        }
+
+        .portfolio-image.orange {
+            background: var(--orange);
+            color: var(--black);
+        }
+
+
+        /* =========================================================
+           WORK HERO
+        ========================================================= */
+
+        .work-hero {
+            min-height: 100vh;
+
+            padding: 120px 50px 48px;
+
+            background: var(--black);
+            color: var(--cream);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .work-hero-title {
+            margin-left: -.045em;
+
+            font-size: clamp(140px, 23vw, 350px);
+            font-weight: 400;
+            line-height: .72;
+            letter-spacing: -.075em;
+        }
+
+        .work-hero-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: end;
+        }
+
+        .work-hero-info {
+            font-size: 10px;
+            line-height: 1.3;
+        }
+
+        .work-index {
+            display: flex;
+            flex-direction: column;
+
+            gap: 7px;
+
+            font-size: 10px;
+        }
+
+        .work-index a {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+
+            width: fit-content;
+        }
+
+        .scroll-explore {
+            margin-top: 45px;
+
+            font-size: 9px;
+        }
+
+
+        /* =========================================================
+           01 BRANDING
+        ========================================================= */
+
+        .branding-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .branding-main {
+            height: 650px;
+        }
+
+        .branding-details {
+            margin-top: 20px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .branding-details .portfolio-image {
+            height: 340px;
+        }
+
+
+        /* =========================================================
+           02 PRINT
+        ========================================================= */
+
+        .print-main {
+            height: 720px;
+        }
+
+        .print-two {
+            margin-top: 20px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .print-two .portfolio-image {
+            height: 500px;
+        }
+
+
+        /* FAKT */
+
+        .project-heading {
+            margin-bottom: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            gap: 30px;
+        }
+
+        .project-heading h3 {
+            font-size: clamp(38px, 5vw, 74px);
+            font-weight: 400;
+
+            line-height: .9;
+            letter-spacing: -.045em;
+        }
+
+        .fakt-layout {
+            display: grid;
+            grid-template-columns: .65fr 1.35fr;
+
+            gap: 20px;
+        }
+
+        .fakt-layout .portfolio-image {
+            height: 560px;
+        }
+
+        .fakt-wide {
+            height: 620px;
+
+            margin-top: 20px;
+        }
+
+
+        /* FOMO */
+
+        .fomo-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .fomo-layout .portfolio-image {
+            height: 520px;
+        }
+
+
+        /* =========================================================
+           03 SOCIAL MEDIA
+        ========================================================= */
+
+        .social-main {
+            height: 720px;
+        }
+
+        .social-three {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-top: 20px;
+        }
+
+        .social-three .portfolio-image {
+            height: 520px;
+        }
+
+
+        /* VATERNAM */
+
+        .vaternam-main {
+            height: 660px;
+        }
+
+        .vaternam-grid {
+            margin-top: 20px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .vaternam-grid .portfolio-image {
+            height: 460px;
+        }
+
+
+        /* =========================================================
+           04 DIGITAL
+        ========================================================= */
+
+        .digital-main {
+            height: 700px;
+        }
+
+        .digital-layout {
+            margin-top: 20px;
+
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+
+            gap: 20px;
+        }
+
+        .digital-layout .portfolio-image {
+            height: 520px;
+        }
+
+
+        /* =========================================================
+           STATEMENT
+        ========================================================= */
+
+        .work-statement {
+            min-height: 100vh;
+
+            padding: 50px;
+
+            background: #77736e;
+            color: var(--cream);
+
+            display: flex;
+            align-items: flex-end;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-statement::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 72% 35%,
+                    rgba(17, 17, 17, .18),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    110deg,
+                    #aaa6a0,
+                    #64615d
+                );
+        }
+
+        .work-statement h2 {
+            position: relative;
+            z-index: 2;
+
+            font-size: clamp(80px, 11vw, 175px);
+            font-weight: 400;
+
+            line-height: .76;
+            letter-spacing: -.065em;
+        }
+
+        .work-statement h2 span {
+            display: block;
+        }
+
+
+        /* =========================================================
+           NEXT
+        ========================================================= */
+
+        .work-next {
+            min-height: 100vh;
+
+            padding: 50px;
+
+            background: var(--orange);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .next-top {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 9px;
+        }
+
+        .next-title {
+            margin-left: -.04em;
+
+            font-size: clamp(150px, 24vw, 360px);
+            font-weight: 400;
+
+            line-height: .7;
+            letter-spacing: -.075em;
+        }
+
+        .next-links {
+            padding-top: 35px;
+
+            border-top: 1px solid rgba(17,17,17,.3);
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 24px;
+        }
+
+        .next-links a {
+            width: fit-content;
+
+            font-size: clamp(34px, 4vw, 62px);
+            letter-spacing: -.04em;
+        }
+
+        .next-links span {
+            margin-left: 14px;
+
+            font-size: .45em;
+        }
+
+        .next-footer {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 9px;
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .work-hero {
+                padding: 110px 20px 35px;
+            }
+
+            .work-hero-title {
+                font-size: 26vw;
+            }
+
+            .work-category {
+                padding: 35px 20px 80px;
+            }
+
+            .category-intro {
+                grid-template-columns: 1fr;
+
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+
+            .category-title {
+                font-size: 15vw;
+            }
+
+            .category-description {
+                max-width: 280px;
+            }
+
+            .branding-main {
+                height: 55vw;
+            }
+
+            .branding-details .portfolio-image {
+                height: 36vw;
+            }
+
+            .print-main,
+            .social-main,
+            .digital-main {
+                height: 65vw;
+            }
+
+            .print-two .portfolio-image {
+                height: 52vw;
+            }
+
+            .fakt-layout .portfolio-image {
+                height: 55vw;
+            }
+
+            .fakt-wide {
+                height: 60vw;
+            }
+
+            .fomo-layout .portfolio-image {
+                height: 48vw;
+            }
+
+            .social-three .portfolio-image,
+            .vaternam-grid .portfolio-image {
+                height: 48vw;
+            }
+
+            .vaternam-main {
+                height: 65vw;
+            }
+
+            .digital-layout .portfolio-image {
+                height: 55vw;
+            }
+
+            .work-statement,
+            .work-next {
+                min-height: 80vh;
+
+                padding: 40px 20px;
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .work-hero {
+                min-height: 100svh;
+            }
+
+            .work-hero-bottom {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .category-title {
+                font-size: 17vw;
+            }
+
+            .branding-layout,
+            .print-two,
+            .fakt-layout,
+            .fomo-layout,
+            .social-three,
+            .vaternam-grid,
+            .digital-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .branding-main,
+            .print-main,
+            .social-main,
+            .digital-main,
+            .vaternam-main {
+                height: 100vw;
+            }
+
+            .branding-details {
+                grid-template-columns: 1fr;
+            }
+
+            .branding-details .portfolio-image,
+            .print-two .portfolio-image,
+            .fakt-layout .portfolio-image,
+            .fakt-wide,
+            .fomo-layout .portfolio-image,
+            .social-three .portfolio-image,
+            .vaternam-grid .portfolio-image,
+            .digital-layout .portfolio-image {
+                height: 105vw;
+            }
+
+            .project-heading {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .work-statement h2 {
+                font-size: 17vw;
+            }
+
+            .next-title {
+                font-size: 28vw;
+            }
+
+            .next-footer {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body class="work-page">
 
-    <header class="navigation work-navigation">
+    <div class="custom-cursor" aria-hidden="true">
+        <span class="cursor-label">VIEW</span>
+    </div>
 
-        <a class="logo" href="index.html">
-            DANJA MÖLLER
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <a href="index.html" class="site-logo">
+            DANJA<br>
+            MOELLER
         </a>
 
-        <nav>
-            <a href="index.html">HOME</a>
-            <a href="#projects">WORK</a>
-            <a href="index.html#contact">CONTACT</a>
-        </nav>
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+        </button>
 
     </header>
 
 
-    <main>
+    <!-- MENU -->
 
-        <!-- WORK HERO -->
+    <div class="menu-overlay">
+
+        <div class="menu-overlay-top">
+
+            <span>
+                DANJA<br>
+                MOELLER
+            </span>
+
+            <button
+                class="menu-close"
+                type="button"
+                aria-label="Menü schließen"
+            >
+                CLOSE
+            </button>
+
+        </div>
+
+
+        <nav class="menu-links">
+
+            <a href="index.html">
+                <span>01</span>
+                <strong>HOME</strong>
+            </a>
+
+            <a href="work.html">
+                <span>02</span>
+                <strong>WORK</strong>
+            </a>
+
+            <a href="about.html">
+                <span>03</span>
+                <strong>ABOUT</strong>
+            </a>
+
+            <a href="contact.html">
+                <span>04</span>
+                <strong>CONTACT</strong>
+            </a>
+
+        </nav>
+
+
+        <div class="menu-footer">
+            <span>CREATIVE DESIGNER</span>
+            <span>© 2026</span>
+        </div>
+
+    </div>
+
+
+
+    <main class="work-main">
+
+
+        <!-- =====================================================
+             WORK HERO
+        ====================================================== -->
 
         <section class="work-hero">
 
-            <div class="section-label">
-                SELECTED PROJECTS / 2024–2026
-            </div>
-
-            <h1>
-                WORK<span>.</span>
+            <h1 class="work-hero-title">
+                WORK.
             </h1>
 
-            <div class="work-hero-bottom">
 
-                <p>
-                    BRANDING<br>
-                    PRINT DESIGN<br>
-                    SOCIAL MEDIA<br>
-                    DIGITAL
-                </p>
+            <div>
 
-                <p>
-                    A SELECTION OF<br>
-                    VISUAL PROJECTS.
+                <div class="work-hero-bottom">
+
+                    <p class="work-hero-info">
+                        SELECTED PROJECTS<br>
+                        2024 – 2026
+                    </p>
+
+
+                    <nav class="work-index">
+
+                        <a href="#branding">
+                            <span>01</span>
+                            <span>BRANDING</span>
+                        </a>
+
+                        <a href="#print">
+                            <span>02</span>
+                            <span>PRINT DESIGN</span>
+                        </a>
+
+                        <a href="#social">
+                            <span>03</span>
+                            <span>SOCIAL MEDIA</span>
+                        </a>
+
+                        <a href="#digital">
+                            <span>04</span>
+                            <span>DIGITAL</span>
+                        </a>
+
+                    </nav>
+
+                </div>
+
+
+                <p class="scroll-explore">
+                    SCROLL TO EXPLORE ↗
                 </p>
 
             </div>
@@ -60,351 +792,595 @@
         </section>
 
 
-        <div id="projects">
+
+        <!-- =====================================================
+             01 / BRANDING
+        ====================================================== -->
+
+        <section
+            class="work-category"
+            id="branding"
+        >
+
+            <p class="work-label">
+                01 / BRANDING
+            </p>
 
 
-            <!-- PROJECT 01 -->
+            <div class="category-intro">
 
-            <section class="project project-branding">
+                <h2 class="category-title">
+                    BRAND<br>
+                    IDENTITIES.
+                </h2>
 
-                <div class="project-meta">
-                    <span>01</span>
-                    <span>BRANDING</span>
-                    <span>2026</span>
+                <p class="category-description">
+                    Logos, visual systems and brand worlds
+                    that make an impact.
+                </p>
+
+            </div>
+
+
+            <!-- BILDER DIREKT UNTER HEADLINE -->
+
+            <div class="branding-layout">
+
+                <article>
+
+                    <div class="portfolio-image dark branding-main">
+                        OWN IDENTITY<br>
+                        MAIN MOCKUP
+                    </div>
+
+                    <div class="project-meta">
+
+                        <strong>Own Identity</strong>
+
+                        <span>
+                            Logo Development / Visual Identity
+                        </span>
+
+                        <span>2024</span>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <div class="portfolio-image branding-main">
+                        THE VILLAGE<br>
+                        SIGNAGE MOCKUP
+                    </div>
+
+                    <div class="project-meta">
+
+                        <strong>The Village</strong>
+
+                        <span>
+                            Rebranding / Visual Identity
+                        </span>
+
+                        <span>Athlone, 2025</span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="branding-details">
+
+                <div class="portfolio-image dark">
+                    BRAND DETAIL
                 </div>
 
+                <div class="portfolio-image mid">
+                    MOBILE MOCKUP
+                </div>
+
+                <div class="portfolio-image">
+                    TOTE BAG MOCKUP
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             02 / PRINT DESIGN
+        ====================================================== -->
+
+        <section
+            class="work-category"
+            id="print"
+        >
+
+            <p class="work-label">
+                02 / PRINT DESIGN
+            </p>
+
+
+            <div class="category-intro">
+
+                <h2 class="category-title">
+                    PRINT<br>
+                    WITH A<br>
+                    PURPOSE.
+                </h2>
+
+                <p class="category-description">
+                    Campaigns, editorials and print designs
+                    with a clear message.
+                </p>
+
+            </div>
+
+
+            <!-- ZUKUNFT STUDIEREN -->
+
+            <article>
+
+                <div class="portfolio-image print-main">
+                    ZUKUNFT STUDIEREN<br>
+                    LARGE CAMPAIGN MOCKUP
+                </div>
+
+                <div class="project-meta">
+
+                    <strong>
+                        Zukunft studieren
+                    </strong>
+
+                    <span>
+                        Campaign / Print / OOH
+                    </span>
+
+                    <span>
+                        Vaternam, 2024
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <div class="print-two">
+
+                <div class="portfolio-image">
+                    CAMPAIGN DETAIL 01
+                </div>
+
+                <div class="portfolio-image">
+                    CAMPAIGN DETAIL 02
+                </div>
+
+            </div>
+
+
+
+            <!-- FAKT -->
+
+            <div class="project-space">
 
                 <div class="project-heading">
 
-                    <h2>
-                        IDENTITY<br>
-                        & BRANDING
-                    </h2>
-
-                </div>
-
-
-                <div class="project-layout project-layout-right">
-
-                    <div class="project-description">
-
-                        <p>
-                            Zwei Branding-Projekte mit unterschiedlichen
-                            Ausgangspunkten: die Entwicklung eines kombinierten
-                            Logos für meinen eigenen Namen sowie das Rebranding
-                            eines lokalen Unternehmens in Athlone.
-                        </p>
-
-                        <div class="project-tools">
-                            ILLUSTRATOR / PHOTOSHOP
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-visual visual-large">
-
-                        <div class="image-placeholder project-image-light">
-                            BRANDING<br>
-                            PROJECT
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- PROJECT 02 -->
-
-            <section class="project project-hannover">
-
-                <div class="project-meta">
-                    <span>02</span>
-                    <span>PRINT CAMPAIGN</span>
-                    <span>2026</span>
-                </div>
-
-
-                <div class="project-heading">
-
-                    <h2>
-                        ZUKUNFT<br>
-                        STUDIEREN.
-                    </h2>
-
-                </div>
-
-
-                <div class="project-layout">
-
-                    <div class="project-visual visual-large">
-
-                        <div class="image-placeholder project-image-orange">
-                            HANNOVER<br>
-                            CAMPAIGN
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-description">
-
-                        <p>
-                            Eine Kampagne für Hannover mit dem Titel
-                            „Zukunft studieren“, entstanden während meiner
-                            Tätigkeit bei Vaternam.
-                        </p>
-
-                        <div class="project-tools">
-                            PHOTOSHOP
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- PROJECT 03 -->
-
-            <section class="project project-magazine">
-
-                <div class="project-meta">
-                    <span>03</span>
-                    <span>EDITORIAL DESIGN</span>
-                    <span>2026</span>
-                </div>
-
-
-                <div class="project-heading">
-
-                    <h2>
+                    <h3>
                         FAKT<br>
                         MAGAZINE
-                    </h2>
+                    </h3>
+
+                    <p class="category-description">
+                        Concept, editorial design
+                        and visual storytelling.
+                    </p>
 
                 </div>
 
 
-                <div class="project-layout project-layout-right">
+                <div class="fakt-layout">
 
-                    <div class="project-description">
-
-                        <p>
-                            Entwicklung und Gestaltung eines eigenen Magazins,
-                            von der ersten Konzeption bis zum finalen Layout.
-                        </p>
-
-                        <div class="project-tools">
-                            INDESIGN
-                        </div>
-
+                    <div class="portfolio-image dark">
+                        FAKT COVER
                     </div>
 
-
-                    <div class="project-visual visual-large">
-
-                        <div class="image-placeholder project-image-dark">
-                            EDITORIAL<br>
-                            DESIGN
-                        </div>
-
+                    <div class="portfolio-image">
+                        EDITORIAL SPREAD
                     </div>
 
                 </div>
 
-            </section>
 
+                <div class="portfolio-image fakt-wide">
+                    DOUBLE PAGE SPREAD
+                </div>
 
-            <!-- PROJECT 04 -->
-
-            <section class="project project-study">
 
                 <div class="project-meta">
-                    <span>04</span>
-                    <span>POSTER DESIGN</span>
-                    <span>2026</span>
+
+                    <strong>
+                        FAKT Magazine
+                    </strong>
+
+                    <span>
+                        Concept / Editorial / InDesign
+                    </span>
+
+                    <span>
+                        2024
+                    </span>
+
                 </div>
 
+            </div>
+
+
+
+            <!-- FOMO -->
+
+            <div class="project-space">
 
                 <div class="project-heading">
 
-                    <h2>
-                        FOMO &<br>
-                        GENERATIONS
-                    </h2>
+                    <h3>
+                        FOMO
+                    </h3>
 
                 </div>
 
 
-                <div class="project-layout">
+                <div class="fomo-layout">
 
-                    <div class="project-visual visual-large">
-
-                        <div class="image-placeholder project-image-red">
-                            POSTER<br>
-                            SERIES
-                        </div>
-
+                    <div class="portfolio-image dark">
+                        FOMO
                     </div>
 
+                    <div class="portfolio-image">
+                        GENERATIONS<br>
+                        COMMUNICATE<br>
+                        DIFFERENTLY.
+                    </div>
 
-                    <div class="project-description">
-
-                        <p>
-                            Zwei Studienprojekte: Gestaltung eines Posters
-                            und einer Postkarte zum Thema FOMO sowie ein
-                            Final Project rund um Boomer vs. Gen Z und
-                            generationelle Stereotype.
-                        </p>
-
-                        <div class="project-tools">
-                            PHOTOSHOP
-                        </div>
-
+                    <div class="portfolio-image orange">
+                        SAME HUMAN<br>
+                        NEEDS.
                     </div>
 
                 </div>
 
-            </section>
-
-
-            <!-- PROJECT 05 -->
-
-            <section class="project project-social">
 
                 <div class="project-meta">
-                    <span>05</span>
-                    <span>SOCIAL MEDIA</span>
-                    <span>2026</span>
+
+                    <strong>
+                        FOMO
+                    </strong>
+
+                    <span>
+                        Campaign / Editorial
+                    </span>
+
+                    <span>
+                        2024
+                    </span>
+
                 </div>
 
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             03 / SOCIAL MEDIA
+        ====================================================== -->
+
+        <section
+            class="work-category"
+            id="social"
+        >
+
+            <p class="work-label">
+                03 / SOCIAL MEDIA
+            </p>
+
+
+            <div class="category-intro">
+
+                <h2 class="category-title">
+                    SOCIAL<br>
+                    CREATIVE.
+                </h2>
+
+                <p class="category-description">
+                    Scroll stopping content for real people
+                    and actual results.
+                </p>
+
+            </div>
+
+
+            <!-- FREELANCE -->
+
+            <article>
+
+                <div class="portfolio-image dark social-main">
+                    FREELANCE CREATIVE<br>
+                    MAIN MOCKUP
+                </div>
+
+                <div class="project-meta">
+
+                    <strong>
+                        Freelance Creatives
+                    </strong>
+
+                    <span>
+                        Concept → Design → Final Execution
+                    </span>
+
+                    <span>
+                        2024 – 2026
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <div class="social-three">
+
+                <div class="portfolio-image">
+                    SOCIAL 01
+                </div>
+
+                <div class="portfolio-image dark">
+                    SOCIAL 02
+                </div>
+
+                <div class="portfolio-image mid">
+                    SOCIAL 03
+                </div>
+
+            </div>
+
+
+
+            <!-- VATERNAM -->
+
+            <div class="project-space">
 
                 <div class="project-heading">
 
-                    <h2>
-                        SOCIAL<br>
-                        CREATIVE
-                    </h2>
+                    <h3>
+                        VATERNAM
+                    </h3>
+
+                    <p class="category-description">
+                        Social media, content
+                        and campaign design.
+                    </p>
 
                 </div>
 
 
-                <div class="project-layout project-layout-right">
+                <div class="portfolio-image dark vaternam-main">
+                    VATERNAM<br>
+                    MAIN CAMPAIGN IMAGE
+                </div>
 
-                    <div class="project-description">
 
-                        <p>
-                            Social Media Creatives für verschiedene Unternehmen,
-                            von der Ideenentwicklung bis zur finalen visuellen
-                            Umsetzung.
-                        </p>
+                <div class="vaternam-grid">
 
-                        <p>
-                            Dazu kommen Instagram-Inhalte aus meiner Tätigkeit
-                            bei Vaternam, inklusive Konzeptentwicklung,
-                            Gestaltung und Veröffentlichung.
-                        </p>
-
+                    <div class="portfolio-image">
+                        SOCIAL MOCKUP
                     </div>
 
+                    <div class="portfolio-image dark">
+                        CREATIVE DETAIL
+                    </div>
 
-                    <div class="project-visual visual-large">
-
-                        <div class="image-placeholder project-image-blue">
-                            SOCIAL<br>
-                            MEDIA
-                        </div>
-
+                    <div class="portfolio-image mid">
+                        CAMPAIGN CREATIVE
                     </div>
 
                 </div>
 
-            </section>
-
-
-            <!-- PROJECT 06 -->
-
-            <section class="project project-web">
 
                 <div class="project-meta">
-                    <span>06</span>
-                    <span>WEB / EMAIL</span>
-                    <span>2026</span>
+
+                    <strong>
+                        Vaternam
+                    </strong>
+
+                    <span>
+                        Social Media / Content / Campaigns
+                    </span>
+
+                    <span>
+                        2024 – 2026
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             04 / DIGITAL
+        ====================================================== -->
+
+        <section
+            class="work-category"
+            id="digital"
+        >
+
+            <p class="work-label">
+                04 / DIGITAL
+            </p>
+
+
+            <div class="category-intro">
+
+                <h2 class="category-title">
+                    DIGITAL<br>
+                    EXPERIENCES.
+                </h2>
+
+                <p class="category-description">
+                    Websites, newsletters and digital
+                    touchpoints that connect.
+                </p>
+
+            </div>
+
+
+            <article>
+
+                <div class="portfolio-image dark digital-main">
+                    WEBSITE PROJECT<br>
+                    LAPTOP MOCKUP
+                </div>
+
+                <div class="project-meta">
+
+                    <strong>
+                        Website Project
+                    </strong>
+
+                    <span>
+                        Webdesign / Elementor
+                    </span>
+
+                    <span>
+                        2025
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <div class="digital-layout">
+
+                <div>
+
+                    <div class="portfolio-image mid">
+                        MOBILE WEBSITE
+                    </div>
+
                 </div>
 
 
-                <div class="project-heading">
+                <div>
 
-                    <h2>
-                        DIGITAL<br>
-                        EXPERIENCES
-                    </h2>
+                    <div class="portfolio-image">
+                        NEWSLETTER DESIGN
+                    </div>
 
-                </div>
+                    <div class="project-meta">
 
+                        <strong>
+                            Newsletter Design
+                        </strong>
 
-                <div class="project-layout">
+                        <span>
+                            Concept / Design / Implementation
+                        </span>
 
-                    <div class="project-visual visual-large">
-
-                        <div class="image-placeholder project-image-lime">
-                            WEB /<br>
-                            EMAIL
-                        </div>
+                        <span>
+                            2024
+                        </span>
 
                     </div>
 
-
-                    <div class="project-description">
-
-                        <p>
-                            Gestaltung von Webseiten und digitalen Layouts
-                            während meiner Tätigkeit bei Vaternam sowie die
-                            Ausarbeitung von E-Mail-Newslettern.
-                        </p>
-
-                        <div class="project-tools">
-                            FIGMA / ELEMENTOR / CANVA
-                        </div>
-
-                    </div>
-
                 </div>
 
-            </section>
+            </div>
+
+        </section>
 
 
-        </div>
 
+        <!-- =====================================================
+             IDEAS MOVE PEOPLE
+        ====================================================== -->
 
-        <!-- WORK END -->
-
-        <section class="work-end">
-
-            <p>THAT'S SOME OF IT.</p>
+        <section class="work-statement">
 
             <h2>
-                WANT TO<br>
-                SEE MORE?
+                <span>IDEAS</span>
+                <span>MOVE</span>
+                <span>PEOPLE.</span>
             </h2>
 
-            <a href="mailto:danja.moeller@gmx.de">
-                LET'S TALK ↗
-            </a>
+        </section>
+
+
+
+        <!-- =====================================================
+             NEXT
+        ====================================================== -->
+
+        <section class="work-next">
+
+            <div class="next-top">
+
+                <span>
+                    DANJA MOELLER
+                </span>
+
+                <span>●</span>
+
+            </div>
+
+
+            <h2 class="next-title">
+                NEXT
+            </h2>
+
+
+            <div class="next-links">
+
+                <a href="about.html">
+                    ABOUT
+                    <span>↗</span>
+                </a>
+
+                <a href="contact.html">
+                    CONTACT
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+
+            <div class="next-footer">
+
+                <a href="work.html">
+                    WORK
+                </a>
+
+                <span>
+                    © 2026 DANJA MOELLER
+                </span>
+
+            </div>
 
         </section>
 
     </main>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 
 </body>
-
 </html>

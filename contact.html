@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Danja Moeller</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================================
+           CONTACT PAGE
+        ========================================================= */
+
+        body.contact-page {
+            background: var(--cream);
+            color: var(--black);
+        }
+
+        .contact-page main {
+            overflow: hidden;
+        }
+
+        .contact-page .site-header {
+            color: var(--black);
+            mix-blend-mode: normal;
+        }
+
+        .contact-page .menu-toggle {
+            border-color: rgba(17, 17, 17, .35);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .contact-hero {
+            min-height: 88vh;
+
+            padding:
+                170px
+                50px
+                110px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            position: relative;
+        }
+
+        .contact-kicker {
+            font-size: 11px;
+            line-height: 1;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+        }
+
+        .contact-title {
+            margin:
+                85px
+                0
+                0
+                -.055em;
+
+            max-width: 1450px;
+
+            font-size: clamp(
+                105px,
+                14vw,
+                230px
+            );
+
+            font-weight: 400;
+
+            line-height: .73;
+            letter-spacing: -.075em;
+        }
+
+        .contact-title span {
+            display: block;
+        }
+
+        .contact-title .accent {
+            color: var(--orange);
+        }
+
+
+        /* HERO BOTTOM */
+
+        .contact-hero-bottom {
+            margin-top: 100px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 60px;
+
+            align-items: end;
+        }
+
+        .contact-intro {
+            max-width: 430px;
+
+            font-size: clamp(
+                16px,
+                1.3vw,
+                20px
+            );
+
+            line-height: 1.4;
+        }
+
+        .contact-details {
+            justify-self: end;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 10px;
+
+            text-align: right;
+
+            font-size: clamp(
+                14px,
+                1.1vw,
+                17px
+            );
+        }
+
+        .contact-details a {
+            transition: opacity .25s ease;
+        }
+
+        .contact-details a:hover {
+            opacity: .5;
+        }
+
+
+        /* =========================================================
+           FORM SECTION
+        ========================================================= */
+
+        .contact-form-section {
+            padding:
+                150px
+                50px
+                150px;
+
+            background: var(--black);
+            color: var(--cream);
+
+            position: relative;
+        }
+
+        .contact-form-top {
+            display: grid;
+
+            grid-template-columns:
+                .4fr
+                1.6fr;
+
+            gap: 80px;
+
+            align-items: start;
+
+            margin-bottom: 115px;
+        }
+
+        .form-number {
+            padding-top: 14px;
+
+            font-size: 11px;
+
+            letter-spacing: .08em;
+        }
+
+        .form-heading {
+            max-width: 1050px;
+
+            margin: 0;
+
+            font-size: clamp(
+                65px,
+                8.5vw,
+                140px
+            );
+
+            font-weight: 400;
+
+            line-height: .79;
+            letter-spacing: -.065em;
+        }
+
+        .form-heading span {
+            display: block;
+        }
+
+        .form-heading .orange {
+            color: var(--orange);
+        }
+
+
+        /* =========================================================
+           FORM
+        ========================================================= */
+
+        .contact-form {
+            width: min(
+                1100px,
+                100%
+            );
+
+            margin-left: auto;
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 55px;
+        }
+
+        .form-field {
+            position: relative;
+
+            margin-bottom: 70px;
+        }
+
+        .form-field label {
+            display: block;
+
+            margin-bottom: 18px;
+
+            font-size: 10px;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            color:
+                rgba(242, 238, 230, .58);
+        }
+
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+
+            padding:
+                0
+                0
+                18px;
+
+            border: 0;
+
+            border-bottom:
+                1px
+                solid
+                rgba(242, 238, 230, .35);
+
+            border-radius: 0;
+
+            outline: 0;
+
+            background: transparent;
+
+            color: var(--cream);
+
+            font: inherit;
+
+            font-size: clamp(
+                20px,
+                2vw,
+                30px
+            );
+
+            line-height: 1.2;
+
+            transition:
+                border-color
+                .3s
+                ease;
+        }
+
+        .form-field textarea {
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+        .form-field input::placeholder,
+        .form-field textarea::placeholder {
+            color:
+                rgba(242, 238, 230, .25);
+        }
+
+        .form-field input:focus,
+        .form-field textarea:focus {
+            border-color: var(--orange);
+        }
+
+
+        /* =========================================================
+           PROJECT TYPE
+        ========================================================= */
+
+        .project-type {
+            margin-bottom: 80px;
+        }
+
+        .project-type-label {
+            display: block;
+
+            margin-bottom: 25px;
+
+            font-size: 10px;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            color:
+                rgba(242, 238, 230, .58);
+        }
+
+        .project-options {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .project-option input {
+            position: absolute;
+
+            opacity: 0;
+
+            pointer-events: none;
+        }
+
+        .project-option span {
+            min-height: 48px;
+
+            padding:
+                0
+                22px;
+
+            border:
+                1px
+                solid
+                rgba(242, 238, 230, .35);
+
+            border-radius: 100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            transition:
+                background-color
+                .25s
+                ease,
+                color
+                .25s
+                ease,
+                border-color
+                .25s
+                ease;
+        }
+
+        .project-option span:hover {
+            border-color: var(--cream);
+        }
+
+        .project-option input:checked + span {
+            background: var(--orange);
+            border-color: var(--orange);
+            color: var(--black);
+        }
+
+
+        /* =========================================================
+           PRIVACY
+        ========================================================= */
+
+        .privacy-field {
+            margin-top: 5px;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 14px;
+        }
+
+        .privacy-field input {
+            position: absolute;
+
+            opacity: 0;
+        }
+
+        .privacy-box {
+            width: 18px;
+            height: 18px;
+
+            flex: 0 0 18px;
+
+            margin-top: 1px;
+
+            border:
+                1px
+                solid
+                rgba(242, 238, 230, .5);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+
+            transition:
+                background
+                .25s
+                ease,
+                border-color
+                .25s
+                ease;
+        }
+
+        .privacy-box::after {
+            content: "";
+
+            width: 6px;
+            height: 10px;
+
+            margin-top: -3px;
+
+            border-right:
+                1.5px
+                solid
+                var(--black);
+
+            border-bottom:
+                1.5px
+                solid
+                var(--black);
+
+            transform: rotate(45deg);
+
+            opacity: 0;
+        }
+
+        .privacy-field input:checked + .privacy-box {
+            background: var(--orange);
+            border-color: var(--orange);
+        }
+
+        .privacy-field input:checked + .privacy-box::after {
+            opacity: 1;
+        }
+
+        .privacy-copy {
+            max-width: 570px;
+
+            color:
+                rgba(242, 238, 230, .58);
+
+            font-size: 11px;
+
+            line-height: 1.45;
+        }
+
+        .privacy-copy a {
+            color: var(--cream);
+
+            text-decoration: underline;
+
+            text-underline-offset: 3px;
+        }
+
+
+        /* =========================================================
+           SEND BUTTON
+        ========================================================= */
+
+        .form-bottom {
+            margin-top: 42px;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .send-button {
+            width: clamp(
+                115px,
+                10vw,
+                145px
+            );
+
+            aspect-ratio: 1;
+
+            border: 0;
+            border-radius: 50%;
+
+            background: var(--orange);
+            color: var(--black);
+
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            gap: 5px;
+
+            font: inherit;
+
+            font-size: 10px;
+            line-height: 1.1;
+
+            text-transform: uppercase;
+
+            transition:
+                transform
+                .45s
+                cubic-bezier(.2,.8,.2,1),
+                background-color
+                .25s
+                ease;
+        }
+
+        .send-button span {
+            font-size: 18px;
+
+            line-height: 1;
+        }
+
+        .send-button:hover {
+            transform:
+                scale(1.07)
+                rotate(-3deg);
+        }
+
+        .form-status {
+            position: absolute;
+
+            left: 0;
+
+            max-width: 450px;
+
+            color:
+                rgba(242, 238, 230, .7);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .contact-footer {
+            min-height: 420px;
+
+            padding:
+                90px
+                50px
+                55px;
+
+            background: var(--cream);
+            color: var(--black);
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr
+                1fr;
+
+            gap: 50px;
+
+            align-items: end;
+        }
+
+        .contact-footer-name {
+            font-size: clamp(
+                55px,
+                6vw,
+                100px
+            );
+
+            line-height: .78;
+            letter-spacing: -.06em;
+        }
+
+        .contact-footer-name span {
+            display: block;
+        }
+
+        .contact-footer-name span + span {
+            margin-top: 8px;
+        }
+
+        .contact-footer-nav {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 42px;
+
+            font-size: 10px;
+        }
+
+        .contact-footer-meta {
+            justify-self: end;
+
+            text-align: right;
+
+            font-size: 9px;
+
+            line-height: 1.4;
+        }
+
+        .contact-footer-meta p + p {
+            margin-top: 30px;
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .contact-hero {
+                padding:
+                    150px
+                    30px
+                    100px;
+            }
+
+            .contact-title {
+                font-size: 14vw;
+            }
+
+            .contact-form-section {
+                padding:
+                    120px
+                    30px
+                    125px;
+            }
+
+            .contact-form-top {
+                grid-template-columns:
+                    .25fr
+                    1.75fr;
+
+                gap: 35px;
+            }
+
+            .contact-footer {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .contact-hero {
+                min-height: 780px;
+
+                padding:
+                    135px
+                    20px
+                    80px;
+            }
+
+            .contact-title {
+                margin-top: 70px;
+
+                font-size: 22vw;
+
+                line-height: .76;
+            }
+
+            .contact-hero-bottom {
+                margin-top: 80px;
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+            .contact-details {
+                justify-self: start;
+
+                text-align: left;
+            }
+
+
+            /* FORM */
+
+            .contact-form-section {
+                padding:
+                    100px
+                    20px
+                    105px;
+            }
+
+            .contact-form-top {
+                display: block;
+
+                margin-bottom: 90px;
+            }
+
+            .form-number {
+                margin-bottom: 35px;
+            }
+
+            .form-heading {
+                font-size: 16vw;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+
+                gap: 0;
+            }
+
+            .form-field {
+                margin-bottom: 55px;
+            }
+
+            .project-type {
+                margin-bottom: 65px;
+            }
+
+            .project-option span {
+                min-height: 44px;
+
+                padding:
+                    0
+                    17px;
+            }
+
+            .form-bottom {
+                margin-top: 40px;
+
+                align-items: flex-end;
+
+                flex-direction: column;
+
+                gap: 30px;
+            }
+
+            .form-status {
+                position: static;
+
+                align-self: flex-start;
+
+                order: 2;
+            }
+
+            .send-button {
+                width: 120px;
+            }
+
+
+            /* FOOTER */
+
+            .contact-footer {
+                min-height: 500px;
+
+                padding:
+                    80px
+                    20px
+                    40px;
+
+                grid-template-columns: 1fr;
+
+                align-items: start;
+
+                gap: 65px;
+            }
+
+            .contact-footer-nav {
+                justify-content: flex-start;
+            }
+
+            .contact-footer-meta {
+                justify-self: start;
+
+                text-align: left;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="contact-page">
+
+
+    <!-- CUSTOM CURSOR -->
+
+    <div
+        class="custom-cursor"
+        aria-hidden="true"
+    >
+        <span class="cursor-label">
+            VIEW
+        </span>
+    </div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <a
+            href="index.html"
+            class="site-logo"
+        >
+            DANJA<br>
+            MOELLER
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+
+
+    <!-- =========================================================
+         MENU
+    ========================================================== -->
+
+    <div class="menu-overlay">
+
+        <div class="menu-overlay-top">
+
+            <span>
+                DANJA<br>
+                MOELLER
+            </span>
+
+            <button
+                class="menu-close"
+                type="button"
+                aria-label="Menü schließen"
+            >
+                CLOSE
+            </button>
+
+        </div>
+
+
+        <nav class="menu-links">
+
+            <a href="index.html">
+                <span>01</span>
+                <strong>HOME</strong>
+            </a>
+
+            <a href="work.html">
+                <span>02</span>
+                <strong>WORK</strong>
+            </a>
+
+            <a href="about.html">
+                <span>03</span>
+                <strong>ABOUT</strong>
+            </a>
+
+            <a href="contact.html">
+                <span>04</span>
+                <strong>CONTACT</strong>
+            </a>
+
+        </nav>
+
+
+        <div class="menu-footer">
+
+            <span>
+                CREATIVE DESIGNER
+            </span>
+
+            <span>
+                © 2026
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="contact-hero">
+
+            <div>
+
+                <p class="contact-kicker">
+                    CONTACT / LET'S TALK
+                </p>
+
+
+                <h1 class="contact-title">
+
+                    <span>
+                        LET'S MAKE
+                    </span>
+
+                    <span>
+                        SOMETHING
+                    </span>
+
+                    <span class="accent">
+                        GOOD.
+                    </span>
+
+                </h1>
+
+            </div>
+
+
+            <div class="contact-hero-bottom">
+
+                <p class="contact-intro">
+                    Du hast ein Projekt, eine Idee oder
+                    möchtest einfach Hallo sagen?
+                    Schreib mir gerne.
+                </p>
+
+
+                <div class="contact-details">
+
+                    <a href="mailto:danja.moeller@gmx.de">
+                        DANJA.MOELLER@GMX.DE ↗
+                    </a>
+
+                    <a href="tel:+4915154197644">
+                        +49 1515 4197644
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FORM
+        ====================================================== -->
+
+        <section class="contact-form-section">
+
+            <div class="contact-form-top">
+
+                <p class="form-number">
+                    01 / CONTACT
+                </p>
+
+
+                <h2 class="form-heading">
+
+                    <span>
+                        START A
+                    </span>
+
+                    <span class="orange">
+                        PROJECT.
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <form
+                class="contact-form"
+                id="contactForm"
+            >
+
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <label for="name">
+                            NAME
+                        </label>
+
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            placeholder="Dein Name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="email">
+                            E-MAIL
+                        </label>
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="deine@email.de"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-type">
+
+                    <span class="project-type-label">
+                        WORUM GEHT'S?
+                    </span>
+
+
+                    <div class="project-options">
+
+                        <label class="project-option">
+                            <input
+                                type="radio"
+                                name="project"
+                                value="Branding"
+                            >
+                            <span>BRANDING</span>
+                        </label>
+
+
+                        <label class="project-option">
+                            <input
+                                type="radio"
+                                name="project"
+                                value="Social Media"
+                            >
+                            <span>SOCIAL MEDIA</span>
+                        </label>
+
+
+                        <label class="project-option">
+                            <input
+                                type="radio"
+                                name="project"
+                                value="Webdesign"
+                            >
+                            <span>WEBDESIGN</span>
+                        </label>
+
+
+                        <label class="project-option">
+                            <input
+                                type="radio"
+                                name="project"
+                                value="Print"
+                            >
+                            <span>PRINT</span>
+                        </label>
+
+
+                        <label class="project-option">
+                            <input
+                                type="radio"
+                                name="project"
+                                value="Other"
+                            >
+                            <span>OTHER</span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="message">
+                        NACHRICHT
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Erzähl mir ein bisschen von deiner Idee ..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <label class="privacy-field">
+
+                    <input
+                        type="checkbox"
+                        name="privacy"
+                        required
+                    >
+
+                    <span class="privacy-box"></span>
+
+
+                    <span class="privacy-copy">
+                        Ich habe die
+                        <a href="datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                        gelesen und stimme der Verarbeitung
+                        meiner Angaben zur Bearbeitung meiner
+                        Anfrage zu.
+                    </span>
+
+                </label>
+
+
+                <div class="form-bottom">
+
+                    <p
+                        class="form-status"
+                        id="formStatus"
+                        aria-live="polite"
+                    ></p>
+
+
+                    <button
+                        class="send-button"
+                        type="submit"
+                        data-cursor="SEND"
+                    >
+                        SEND MESSAGE
+
+                        <span>↗</span>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer class="contact-footer">
+
+            <div class="contact-footer-name">
+
+                <span>DANJA</span>
+                <span>MOELLER</span>
+
+            </div>
+
+
+            <nav class="contact-footer-nav">
+
+                <a href="work.html">
+                    WORK
+                </a>
+
+                <a href="about.html">
+                    ABOUT
+                </a>
+
+                <a href="contact.html">
+                    CONTACT
+                </a>
+
+            </nav>
+
+
+            <div class="contact-footer-meta">
+
+                <p>
+                    CREATIVE DESIGNER<br>
+                    & DIGITAL ARTIST
+                </p>
+
+                <p>
+                    © 2026 DANJA MOELLER
+                </p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <script src="script.js"></script>
+
+
+    <!-- TEMPORÄR BIS E-MAIL-VERSAND VERBUNDEN IST -->
+
+    <script>
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const formStatus =
+            document.getElementById("formStatus");
+
+
+        contactForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                formStatus.textContent =
+                    "FORMULAR IST BEREIT. E-MAIL-VERSAND WIRD ALS NÄCHSTES VERBUNDEN.";
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
