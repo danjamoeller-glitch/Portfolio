@@ -824,6 +824,7 @@
 
     </style>
 
+<link rel="stylesheet" href="october-refinement.css?v=20261002-r5">
 </head>
 
 
@@ -900,7 +901,7 @@
                 <strong>HOME</strong>
             </a>
 
-            <a href="work.html">
+            <a href="work.html?v=20261002-r5">
                 <span>02</span>
                 <strong>WORK</strong>
             </a>
@@ -960,7 +961,7 @@
                     </span>
 
                     <span class="accent">
-                        GOOD.
+                        GOOD<span class="heading-dot">.</span>
                     </span>
 
                 </h1>
@@ -1025,10 +1026,16 @@
             <form
                 class="contact-form"
                 id="contactForm"
+                method="post"
+                action="https://form.taxi/s/ttog4w3a" data-endpoint="https://form.taxi/s/ttog4w3a"
             >
 
 
-                <div class="form-row">
+                <input type="hidden" name="_subject" value="Neue Portfolio-Anfrage">
+<input type="hidden" name="_lang" value="de">
+<input type="text" name="_honeypot" tabindex="-1" autocomplete="off" hidden>
+<p class="form-delivery-note">Deine Angaben werden über Form.taxi verschlüsselt zur Bearbeitung deiner Anfrage übertragen.</p>
+<div class="form-row">
 
                     <div class="form-field">
 
@@ -1163,9 +1170,7 @@
                         <a href="datenschutz.html">
                             Datenschutzerklärung
                         </a>
-                        gelesen und stimme der Verarbeitung
-                        meiner Angaben zur Bearbeitung meiner
-                        Anfrage zu.
+                        zur Verarbeitung meiner Angaben gelesen.
                     </span>
 
                 </label>
@@ -1213,7 +1218,7 @@
 
             <nav class="contact-footer-nav">
 
-                <a href="work.html">
+                <a href="work.html?v=20261002-r5">
                     WORK
                 </a>
 
@@ -1253,32 +1258,7 @@
     <script src="script.js"></script>
 
 
-    <!-- TEMPORÄR BIS E-MAIL-VERSAND VERBUNDEN IST -->
-
-    <script>
-
-        const contactForm =
-            document.getElementById("contactForm");
-
-        const formStatus =
-            document.getElementById("formStatus");
-
-
-        contactForm.addEventListener(
-            "submit",
-            function(event) {
-
-                event.preventDefault();
-
-                formStatus.textContent =
-                    "FORMULAR IST BEREIT. E-MAIL-VERSAND WIRD ALS NÄCHSTES VERBUNDEN.";
-
-            }
-        );
-
-    </script>
-
-
-</body>
+    <script src="contact-form.js?v=20261002-r15"></script>
+<nav class="legal-links" aria-label="Rechtliche Informationen"><a href="impressum.html">IMPRESSUM</a><a href="datenschutz.html">DATENSCHUTZ</a></nav></body>
 
 </html>

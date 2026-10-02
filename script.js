@@ -114,280 +114,44 @@ function initMenu() {
 ======================================== */
 
 function initAdaptiveHeader() {
-
-    const header =
-        document.querySelector(".site-header");
-
-    const menuToggle =
-        document.querySelector(".menu-toggle");
-
-    const logo =
-        document.querySelector(".site-logo");
-
-    if (!header || !menuToggle) return;
-
-
-    function getVisibleBackground(element) {
-
-        let current = element;
-
-        while (
-            current &&
-            current !== document.documentElement
-        ) {
-
-            const style =
-                window.getComputedStyle(current);
-
-            const background =
-                style.backgroundColor;
-
-            if (
-                background &&
-                background !== "transparent" &&
-                background !== "rgba(0, 0, 0, 0)"
-            ) {
-                return background;
-            }
-
-            current =
-                current.parentElement;
-
-        }
-
-        return window.getComputedStyle(
-            document.body
-        ).backgroundColor;
-
+ const header = document.querySelector('.site-header');
+ if (!header) return;
+ const controls = [...header.querySelectorAll('.site-logo, .menu-toggle')];
+ function refresh() {
+  const old = header.style.pointerEvents;
+  header.style.pointerEvents = 'none';
+  controls.forEach(control => {
+   const rect = control.getBoundingClientRect();
+   let under = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+   let dark = false;
+   if (under?.closest('.work-hero,.approach-section,.design-thinking,.concept-section')) dark = true;
+   else {
+    while (under) {
+     const value = getComputedStyle(under).backgroundColor;
+     const rgb = value.match(/[\d.]+/g);
+     if (rgb && rgb.length >= 3 && (rgb.length < 4 || Number(rgb[3]) > .5)) {
+      dark = (.299 * Number(rgb[0]) + .587 * Number(rgb[1]) + .114 * Number(rgb[2])) < 145;
+      break;
+     }
+     under = under.parentElement;
     }
-
-
-    function isDarkBackground(background) {
-
-        if (!background) return false;
-
-        const rgb =
-            background.match(/\d+(\.\d+)?/g);
-
-        if (!rgb || rgb.length < 3) {
-            return false;
-        }
-
-        const red =
-            Number(rgb[0]);
-
-        const green =
-            Number(rgb[1]);
-
-        const blue =
-            Number(rgb[2]);
-
-
-        const brightness =
-            (
-                red * 299 +
-                green * 587 +
-                blue * 114
-            ) / 1000;
-
-
-        return brightness < 145;
-
-    }
-
-
-    function updateHeaderColor() {
-
-        /*
-        Prüft die Fläche direkt unter
-        dem Burger-Menü.
-        */
-
-        const rect =
-            menuToggle.getBoundingClientRect();
-
-        const x =
-            rect.left +
-            rect.width / 2;
-
-        const y =
-            rect.top +
-            rect.height / 2;
-
-
-        /*
-        Header kurz aus der Trefferprüfung
-        nehmen, damit das Element darunter
-        gefunden wird.
-        */
-
-        const oldPointerEvents =
-            header.style.pointerEvents;
-
-        header.style.pointerEvents =
-            "none";
-
-
-        const elementUnderHeader =
-            document.elementFromPoint(
-                x,
-                y
-            );
-
-
-        header.style.pointerEvents =
-            oldPointerEvents;
-
-
-        if (!elementUnderHeader) return;
-
-
-        /*
-        Work Hero ist schwarz, aber manche
-        Sections nutzen Backgrounds über
-        Klassen oder Verläufe.
-
-        Deshalb zuerst bekannte dunkle
-        Bereiche prüfen.
-        */
-
-        const darkSection =
-            elementUnderHeader.closest(
-                [
-                    ".work-hero",
-                    ".work-statement",
-                    ".approach-section",
-                    ".design-thinking"
-                ].join(",")
-            );
-
-
-        let dark = false;
-
-
-        if (darkSection) {
-
-            dark = true;
-
-        } else {
-
-            const background =
-                getVisibleBackground(
-                    elementUnderHeader
-                );
-
-            dark =
-                isDarkBackground(
-                    background
-                );
-
-        }
-
-
-        if (dark) {
-
-            /* WHITE */
-
-            menuToggle.style.borderColor =
-                "rgba(242, 238, 230, .55)";
-
-            menuToggle.style.color =
-                "#f2eee6";
-
-
-            const burgerLines =
-                menuToggle.querySelectorAll(
-                    "span"
-                );
-
-
-            burgerLines.forEach(line => {
-
-                line.style.backgroundColor =
-                    "#f2eee6";
-
-            });
-
-
-            if (logo) {
-
-                logo.style.color =
-                    "#f2eee6";
-
-            }
-
-        } else {
-
-            /* BLACK */
-
-            menuToggle.style.borderColor =
-                "rgba(17, 17, 17, .35)";
-
-            menuToggle.style.color =
-                "#111111";
-
-
-            const burgerLines =
-                menuToggle.querySelectorAll(
-                    "span"
-                );
-
-
-            burgerLines.forEach(line => {
-
-                line.style.backgroundColor =
-                    "#111111";
-
-            });
-
-
-            if (logo) {
-
-                logo.style.color =
-                    "#111111";
-
-            }
-
-        }
-
-    }
-
-
-    /*
-    Direkt beim Laden.
-    */
-
-    updateHeaderColor();
-
-
-    /*
-    Beim Scrollen automatisch wechseln.
-    */
-
-    window.addEventListener(
-        "scroll",
-        updateHeaderColor,
-        {
-            passive: true
-        }
-    );
-
-
-    /*
-    Auch bei Resize neu prüfen.
-    */
-
-    window.addEventListener(
-        "resize",
-        updateHeaderColor
-    );
-
+   }
+   const color = dark ? '#f2eee6' : '#111111';
+   control.style.color = color;
+   control.style.borderColor = color;
+   control.querySelectorAll('span').forEach(line => {
+    if (control.classList.contains('menu-toggle')) line.style.backgroundColor = color;
+   });
+  });
+  header.style.pointerEvents = old;
+ }
+ let queued = false;
+ function schedule() { if (queued) return; queued = true; requestAnimationFrame(() => {queued = false; refresh();}); }
+ refresh();
+ window.addEventListener('scroll',schedule,{passive:true});
+ window.addEventListener('resize',schedule);
+ window.addEventListener('load',refresh);
 }
-
-
-/* ========================================
-   CUSTOM CURSOR
-======================================== */
 
 function initCustomCursor() {
 
