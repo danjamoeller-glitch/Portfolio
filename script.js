@@ -436,18 +436,12 @@ function initCustomCursor() {
        VIEW ELEMENTS
     ==================================== */
 
-    const viewElements =
-        document.querySelectorAll(
-            [
-                "[data-cursor]",
-                ".work-image-link",
-                ".portfolio-image",
-                ".hero-image",
-                ".about-image",
-                ".about-portrait",
-                ".photo-card"
-            ].join(",")
-        );
+    const viewElements = Array.from(document.querySelectorAll(
+        'a[href], button, summary'
+    )).filter(element => element.hasAttribute('data-cursor') ||
+        element.matches('.work-image-link, summary') ||
+        element.querySelector('img'));
+
 
 
     viewElements.forEach(
@@ -456,6 +450,7 @@ function initCustomCursor() {
             element.addEventListener(
                 "mouseenter",
                 event => {
+                    if (element.disabled) return;
 
                     const label =
                         element.dataset

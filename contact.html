@@ -822,6 +822,12 @@
 
         }
 
+    /* Keep submission feedback visible and separate from the send button. */
+        #formStatus {position:relative;left:auto;max-width:100%;font-size:15px;line-height:1.5;}
+        #formStatus:empty {display:none;}
+        #formStatus[data-state] {padding:16px 20px;border:1px solid currentColor;}
+        #formStatus[data-state="success"] {background:#f2eee6;color:#111;border-left:5px solid var(--orange, #ff6b00);}
+        #formStatus:focus {outline:none;}
     </style>
 
 <link rel="stylesheet" href="october-refinement.css?v=20261002-r5">
@@ -1181,6 +1187,8 @@
                     <p
                         class="form-status"
                         id="formStatus"
+                        tabindex="-1"
+                        role="status"
                         aria-live="polite"
                     ></p>
 
@@ -1255,10 +1263,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20261002-r17"></script>
 
 
-    <script src="contact-form.js?v=20261002-r15"></script>
+    <script src="contact-form.js?v=20261002-r17"></script>
 <nav class="legal-links" aria-label="Rechtliche Informationen"><a href="impressum.html">IMPRESSUM</a><a href="datenschutz.html">DATENSCHUTZ</a></nav></body>
 
 </html>
