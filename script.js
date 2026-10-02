@@ -192,8 +192,10 @@ function initCustomCursor() {
             mouseY =
                 event.clientY;
 
-            cursor.style.opacity =
-                "1";
+            const readerControl = event.target.closest('.portfolio-controls, .portfolio-chapters');
+            cursor.style.opacity = readerControl ? "0" : "1";
+            if (readerControl) { cursorX = mouseX; cursorY = mouseY; }
+
 
 
             updateCursorContrast(

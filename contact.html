@@ -823,14 +823,17 @@
         }
 
     /* Keep submission feedback visible and separate from the send button. */
-        #formStatus {position:relative;left:auto;max-width:100%;font-size:15px;line-height:1.5;}
+        #formStatus {position:relative;left:auto;width:100%;max-width:100%;box-sizing:border-box;font-size:clamp(18px,2vw,24px);line-height:1.5;}
         #formStatus:empty {display:none;}
-        #formStatus[data-state] {padding:16px 20px;border:1px solid currentColor;}
+        #formStatus[data-state] {padding:24px 28px;border:2px solid currentColor;}
         #formStatus[data-state="success"] {background:#f2eee6;color:#111;border-left:5px solid var(--orange, #ff6b00);}
         #formStatus:focus {outline:none;}
+        .form-bottom {flex-wrap:wrap;}
+        #formStatus {flex:0 0 100%;}
+        #formStatus[data-state="success"] {min-height:100px;display:flex;align-items:center;font-weight:600;}
     </style>
 
-<link rel="stylesheet" href="october-refinement.css?v=20261002-r5">
+<link rel="stylesheet" href="october-refinement.css?v=20261002-r19">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20261002-r18">
 </head>
 
@@ -1264,7 +1267,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 
-    <script src="script.js?v=20261002-r17"></script>
+    <script src="script.js?v=20261002-r19"></script>
 
 
     <script src="contact-form.js?v=20261002-r17"></script>

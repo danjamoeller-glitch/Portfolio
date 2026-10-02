@@ -218,6 +218,11 @@
 
 /* Larger page-turn targets, isolated from page artwork. */
 .portfolio-controls{position:relative;z-index:10;gap:20px;}
-.portfolio-controls button{width:72px;height:64px;flex:0 0 72px;touch-action:manipulation;}
+.portfolio-controls button{width:48px;height:48px;flex:0 0 48px;touch-action:manipulation;}
 .portfolio-controls button:focus-visible{outline:3px solid var(--orange);outline-offset:4px;}
-@media(max-width:600px){.portfolio-controls button{width:60px;height:60px;flex-basis:60px;}}
+@media(max-width:600px){.portfolio-controls button{width:48px;height:48px;flex-basis:48px;}}
+
+/* Empty fixed-header space must never intercept content controls. */
+.site-header{pointer-events:none;}
+.site-header .site-logo,.site-header .menu-toggle{pointer-events:auto;}
+.portfolio-controls button,.portfolio-chapters button{cursor:pointer;}
