@@ -215,3 +215,9 @@
 .portfolio-chapters button span{display:block;font-size:10px;margin-top:5px;}
 .portfolio-chapters button:hover,.portfolio-chapters button:focus-visible{background:var(--orange);color:#111;}
 @media(max-width:600px){.work-page .performance-upper,.work-page .performance-lower{gap:14px!important;}.work-page .performance-lower{margin-top:14px!important;}}
+
+/* Larger page-turn targets, isolated from page artwork. */
+.portfolio-controls{position:relative;z-index:10;gap:20px;}
+.portfolio-controls button{width:72px;height:64px;flex:0 0 72px;touch-action:manipulation;}
+.portfolio-controls button:focus-visible{outline:3px solid var(--orange);outline-offset:4px;}
+@media(max-width:600px){.portfolio-controls button{width:60px;height:60px;flex-basis:60px;}}
